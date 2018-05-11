@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray tagsArray = firstResult.getJSONArray("tags");
 
                 String name = tagsArray.getString(2);
-                String Date = firstResult.getString("webpublicationDate");
+                String Date = firstResult.getString("webPublicationDate");
                 String title = firstResult.getString("webTitle");
 
                 // Create a new {@link Event} object
