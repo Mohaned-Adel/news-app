@@ -171,8 +171,9 @@ public class MainActivity extends AppCompatActivity {
                 // Extract our results
                 JSONObject firstResult = resultsArray.getJSONObject(0);
                 JSONArray tagsArray = firstResult.getJSONArray("tags");
+                JSONObject firstTag = tagsArray.getJSONObject(0);
 
-                String name = tagsArray.getString(2);
+                String name = firstTag.getString("webTitle");
                 String Date = firstResult.getString("webPublicationDate");
                 String title = firstResult.getString("webTitle");
 
