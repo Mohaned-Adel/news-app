@@ -3,6 +3,7 @@ package com.example.mohaned.newsapp;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -43,34 +46,19 @@ public class EventAdapter extends ArrayAdapter<Event> {
         Event currentEvent = getItem(position);
 
         // Making an image from the image String url
-        URL url = null;
-        Bitmap bmp = null;
-
-        try {
-             url = new URL(currentEvent.getImageUrl());
-        } catch (MalformedURLException e) {
-            Log.e(LOG_TAG, "error with image url in EventAdapter");
-        }
-
-        try {
-             bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "error with the connection bitmap", e);
-        }
 
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
-        if (bmp != null) {
-            imageView.setImageBitmap(bmp);
-        } else {
-            imageView.setImageResource(R.drawable.placeholder);
-        }
+
+        Uri url = Uri.parse(currentEvent.getImageUrl());
+
+        Picasso.get().load(url).placeholder(R.drawable.placeholder).into(imageView);
 
         // Get the name
         String name = new String(currentEvent.getArticleName());
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.name);
 
         if (name.isEmpty()) {
-            nameTextView.setText("there is no Name");
+            nameTextView.setText(R.string.no_name);
         } else {
             nameTextView.setText(name);
         }
@@ -86,8 +74,10 @@ public class EventAdapter extends ArrayAdapter<Event> {
         TextView timeView = (TextView) listItemView.findViewById(R.id.time);
 
         String[] dates = dateAndTime.split("T");
+        String[] times = dates[1].split("Z");
         dateView.setText(dates[0]);
-        timeView.setText(dates[1]);
+        timeView.setText(times[0]);
+
 
         // Get the article Type
         String articleType = new String(currentEvent.getType());
@@ -97,6 +87,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
         // Get the article section name
         String sectionName = new String(currentEvent.getSection());
         TextView sectionView = (TextView) listItemView.findViewById(R.id.sectionName);
+        sectionView.setText(sectionName);
 
         return listItemView;
     }

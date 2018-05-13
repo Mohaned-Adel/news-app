@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">News App</string>
+    <string name="no_name">"there is no Name"</string>
+    <string name="no_connection">no connection error message</string>
+    <string name="no_article">No articles found</string>
+
+    <string name="name_placeholder">Name of the article</string>
+    <string name="title_placeholder">Long placeholder title that should wrap to more than 2 lines of text</string>
+    <string name="date_placeholder">2017-05-27</string>
+    <string name="time_placeholder">11:01:26</string>
+    <string name="article_placeholder">Article</string>
+    <string name="sectionName_placeholder">Global</string>
 </resources>

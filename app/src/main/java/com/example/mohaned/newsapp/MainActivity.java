@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity
             loadingIndicator.setVisibility(View.GONE);
 
             //Update empty state with no connection error message
-            mEmptyStateTextView.setText("no connection error message");
+            mEmptyStateTextView.setText(R.string.no_connection);
         }
     }
 
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity
         loadingIndicator.setVisibility(View.GONE);
 
         // Set empty state text to display "No articles found"
-        mEmptyStateTextView.setText("No articles found");
+        mEmptyStateTextView.setText(R.string.no_article);
 
         // Clear the adapter of previous article data
         mAdapter.clear();

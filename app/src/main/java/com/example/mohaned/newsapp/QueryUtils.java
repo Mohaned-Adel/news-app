@@ -2,8 +2,6 @@ package com.example.mohaned.newsapp;
 
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.ImageView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -155,7 +153,6 @@ public final class QueryUtils {
                 // Extract our results
                 JSONObject resultObjects = resultsArray.getJSONObject(i);
                 JSONArray tagsArray = resultObjects.getJSONArray("tags");
-//                JSONObject firstTag = tagsArray.getJSONObject(0);
 
                 String type = resultObjects.getString("type");
                 String sectionName = resultObjects.getString("sectionName");
