@@ -29,7 +29,8 @@ public class Event {
     /** the url source */
     private String url;
 
-    public Event (String eventImageUrl, String eventName, String eventTitle, String eventDate, String eventType, String eventSection, String eventUrl) {
+    public Event (String eventImageUrl, String eventName, String eventTitle,
+                  String eventDate, String eventType, String eventSection, String eventUrl) {
 
         imageUrl = eventImageUrl;
         articleName = eventName;
@@ -39,6 +40,38 @@ public class Event {
         section = eventSection;
         url = eventUrl;
     }
+
+//    public Event ( String eventName, String eventTitle,
+//                  String eventDate, String eventType, String eventSection, String eventUrl) {
+//
+//        articleName = eventName;
+//        webTitle = eventTitle;
+//        date = eventDate;
+//        type = eventType;
+//        section = eventSection;
+//        url = eventUrl;
+//    }
+
+    public Event (String eventImageUrl, String eventTitle,
+                  String eventDate, String eventType, String eventSection, String eventUrl) {
+
+        imageUrl = eventImageUrl;
+        webTitle = eventTitle;
+        date = eventDate;
+        type = eventType;
+        section = eventSection;
+        url = eventUrl;
+    }
+
+//    public Event ( String eventTitle,
+//                  String eventDate, String eventType, String eventSection, String eventUrl) {
+//
+//        webTitle = eventTitle;
+//        date = eventDate;
+//        type = eventType;
+//        section = eventSection;
+//        url = eventUrl;
+//    }
 
     public String getImageUrl() { return imageUrl; }
     public String getArticleName() { return articleName; }

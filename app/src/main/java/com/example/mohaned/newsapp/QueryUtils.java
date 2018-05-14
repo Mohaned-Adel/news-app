@@ -153,14 +153,29 @@ public final class QueryUtils {
                 // Extract our results
                 JSONObject resultObjects = resultsArray.getJSONObject(i);
                 JSONArray tagsArray = resultObjects.getJSONArray("tags");
+                JSONObject firstTag;
+
+                if (tagsArray.length() == 0) {
+                    continue;
+                } else {
+                    firstTag = tagsArray.getJSONObject(0);
+                }
 
                 String type = resultObjects.getString("type");
                 String sectionName = resultObjects.getString("sectionName");
                 String url = resultObjects.getString("webUrl");
                 String Date = resultObjects.getString("webPublicationDate");
                 String title = resultObjects.getString("webTitle");
-                String image = "http://via.placeholder.com/48x48";
-                String name = "placeholder name";
+                String image = "",
+                        name = "";
+
+                if (firstTag.has("webTitle")) {
+                    name = firstTag.getString("webTitle");
+                }
+
+                if (firstTag.has("bylineImageUrl")) {
+                    image = firstTag.getString("bylineImageUrl");
+                }
 
                 // Create a new {@link Event} object
                 Event article = new Event(image, name, title, Date, type, sectionName, url);
