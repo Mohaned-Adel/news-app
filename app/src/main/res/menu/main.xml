@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!--Step 3: Setup the Menu xml file-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    tools:context = "com.example.mohaned.newsapp.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/settings_menu_item" />
+</menu>

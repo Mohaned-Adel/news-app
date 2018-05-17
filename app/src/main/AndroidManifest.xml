@@ -19,6 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+         <!--And lastly, we'll need to declare our new Settings Activity in AndroidManifest.xml inside the <application> tag. It’s parent activity will be MainActivity because later we will set Settings to open from the Article Activity.-->
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_title"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mohaned.newsapp.MainActivity"/>
+        </activity>
+
     </application>
 
 </manifest>

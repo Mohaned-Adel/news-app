@@ -10,4 +10,26 @@
     <string name="time_placeholder">11:01:26</string>
     <string name="article_placeholder">Article</string>
     <string name="sectionName_placeholder">Global</string>
+
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">Article Settings</string>
+
+    <!-- Strings For Search-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_search_by_label">Search By</string>
+    <string name="settings_search_by_key" translatable="false">search_by</string>
+    <string name="settings_search_by_default" translatable="false">@string/settings_search_by_football_value</string>
+
+    <!-- Label for search-by football option [CHAR LIMIT=20] -->
+    <string name="settings_search_by_football_label">Football</string>
+    <string name="settings_search_by_football_value" translatable="false">football</string>
+
+    <!-- Label for search-by news option [CHAR LIMIT=20] -->
+    <string name="settings_search_by_news_label">News</string>
+    <string name="settings_search_by_news_value" translatable="false">news</string>
+
+    <!-- Label for search-by crime option [CHAR LIMIT=20] -->
+    <string name="settings_search_by_crime_label">Crime</string>
+    <string name="settings_search_by_crime_value" translatable="false">crime</string>
+
+
 </resources>
